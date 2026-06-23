@@ -1,6 +1,10 @@
 from openai import OpenAI
+from dotenv import load_dotenv, dotenv_values
+import os
+load_dotenv()
+val=os.getenv('base_url')
 client = OpenAI(
-    base_url ="http://192.168.1.39:11434/v1",
+    base_url =val,
     api_key="ollama"
 )
 response =client.responses.create(
