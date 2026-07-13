@@ -1,3 +1,4 @@
+#encoding for text using tiktoken
 import tiktoken
 encode = tiktoken.encoding_for_model("gpt-4")
 text= input("Enter your text: ")
