@@ -1,3 +1,4 @@
+#using character text splitter
 from langchain_text_splitters import CharacterTextSplitter
 text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
     separator="", chunk_size=50, chunk_overlap=1 #where there is separator there it will end chunk and therefore doesn't depend in chunk_size
@@ -8,6 +9,8 @@ But there are people who take salt in their coffee. They say it gives it a tang,
 strs = text_splitter.split_text(str)
 print(f"by using character text splitter {strs}\n\n")
 
+
+#using recursive character text splitter
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=50, chunk_overlap=0)
 #smartly checks for generic text because it uses a list of separators in priority order (default: ["\n\n", "\n", " ", ""]).
